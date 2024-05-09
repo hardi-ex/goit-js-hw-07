@@ -31,7 +31,7 @@ const createMarkup = array => {
   return array
     .map(arr => {
       return `<li class="gallery-item">
-        <img src="${arr.url}" alt="${arr.alt}">
+        <img src="${arr.url}" alt="${arr.alt}" class="gallery-img">
       </li>
     `;
     })
