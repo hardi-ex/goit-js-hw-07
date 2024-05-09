@@ -10,7 +10,8 @@ const buttonDestroyEl = document.querySelector('[data-destroy]');
 const boxesEls = document.querySelector('#boxes');
 
 function createBoxes(amount) {
-  boxesEls.innerHTML = '';
+  const arrayOfBoxes = [];
+
   let size = 30;
 
   for (let i = 0; i < amount; i++) {
@@ -19,9 +20,10 @@ function createBoxes(amount) {
     div.style.backgroundColor = getRandomHexColor();
     div.style.width = `${size}px`;
     div.style.height = `${size}px`;
-    boxesEls.append(div);
+    arrayOfBoxes.push(div);
     size += 10;
   }
+  boxesEls.append(...arrayOfBoxes);
 }
 
 buttonCreateEl.addEventListener('click', evt => {
